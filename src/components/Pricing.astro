@@ -1,0 +1,253 @@
+---
+// Pricing component
+const pricingPlans = [
+  {
+    name: "Basic",
+    price: "$29",
+    period: "/month",
+    description: "Perfect for individuals and small families",
+    features: [
+      "Basic health coverage",
+      "24/7 customer support",
+      "Online claim filing",
+      "Emergency assistance",
+      "Mobile app access"
+    ],
+    popular: false
+  },
+  {
+    name: "Premium",
+    price: "$79",
+    period: "/month",
+    description: "Comprehensive coverage for growing families",
+    features: [
+      "Complete health & dental",
+      "Auto insurance included",
+      "Home insurance discount",
+      "Priority customer support",
+      "Travel insurance",
+      "Personal advisor"
+    ],
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "$149",
+    period: "/month",
+    description: "Full protection for businesses and large families",
+    features: [
+      "All Premium features",
+      "Business liability coverage",
+      "Life insurance included",
+      "Dedicated account manager",
+      "Custom policy options",
+      "Risk assessment consulting"
+    ],
+    popular: false
+  }
+];
+---
+
+<section id="pricing" class="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2>Choose Your Protection Plan</h2>
+      <p>Flexible pricing options to fit your budget and coverage needs</p>
+    </div>
+    <div class="pricing-grid">
+      {pricingPlans.map((plan) => (
+        <div class={`pricing-card ${plan.popular ? 'popular' : ''}`}>
+          {plan.popular && <div class="popular-badge">Most Popular</div>}
+          <div class="plan-header">
+            <h3>{plan.name}</h3>
+            <div class="price">
+              <span class="amount">{plan.price}</span>
+              <span class="period">{plan.period}</span>
+            </div>
+            <p class="description">{plan.description}</p>
+          </div>
+          <ul class="features-list">
+            {plan.features.map((feature) => (
+              <li>
+                <span class="checkmark">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <button class={`btn ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>
+            Get Started
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    padding: 5rem 0;
+    background-color: white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .pricing-card.popular {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .plan-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    margin-bottom: 1rem;
+  }
+
+  .amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e293b;
+  }
+
+  .period {
+    font-size: 1rem;
+    color: #64748b;
+  }
+
+  .description {
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+  }
+
+  .features-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .features-list li:last-child {
+    border-bottom: none;
+  }
+
+  .checkmark {
+    color: #10b981;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+
+  .btn-primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #3b82f6;
+    border-color: #3b82f6;
+  }
+
+  .btn-secondary:hover {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-card.popular {
+      transform: none;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

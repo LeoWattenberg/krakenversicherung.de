@@ -1,0 +1,133 @@
+---
+// Features component
+const features = [
+  {
+    icon: "🏠",
+    title: "Home Insurance",
+    description: "Comprehensive coverage for your home and belongings against natural disasters, theft, and accidents."
+  },
+  {
+    icon: "🚗",
+    title: "Auto Insurance",
+    description: "Complete vehicle protection with liability, collision, and comprehensive coverage options."
+  },
+  {
+    icon: "❤️",
+    title: "Health Insurance",
+    description: "Quality healthcare coverage with flexible plans to meet your medical needs and budget."
+  },
+  {
+    icon: "💼",
+    title: "Business Insurance",
+    description: "Protect your business with tailored coverage for liability, property, and employee benefits."
+  },
+  {
+    icon: "✈️",
+    title: "Travel Insurance",
+    description: "Stay protected while traveling with coverage for medical emergencies, trip cancellation, and lost luggage."
+  },
+  {
+    icon: "👨‍👩‍👧‍👦",
+    title: "Life Insurance",
+    description: "Secure your family's financial future with term and whole life insurance options."
+  }
+];
+---
+
+<section id="features" class="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Insurance Solutions</h2>
+      <p>Comprehensive coverage options designed to protect what matters most to you</p>
+    </div>
+    <div class="features-grid">
+      {features.map((feature) => (
+        <div class="feature-card">
+          <div class="feature-icon">{feature.icon}</div>
+          <h3>{feature.title}</h3>
+          <p>{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 5rem 0;
+    background-color: #f8fafc;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.25rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card p {
+    color: #64748b;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
