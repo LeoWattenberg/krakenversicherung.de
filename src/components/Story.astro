@@ -1,0 +1,176 @@
+---
+// Story component - tells the tale from Leo Wattenberg's article
+---
+
+<section class="story">
+  <div class="container">
+    <div class="story-content">
+      <h2>Unsere Geschichte</h2>
+      <div class="story-text">
+        <p class="story-intro">Es war einmal ein Mann, der eine Krankenversicherung brauchte...</p>
+        
+        <div class="dialogue">
+          <div class="character customer">
+            <span class="name">Der Kunde:</span>
+            <p>"Ich würde gerne bei Ihnen Kunde werden. Haben Sie eine Krankenversicherung?"</p>
+          </div>
+          
+          <div class="character agent">
+            <span class="name">Unser Versicherungsheini:</span>
+            <p>"Aber sicher! Wir haben nur vier verschiedene Verträge – ganz ohne Berufsmathematiker zu verstehen. Wir bieten Tierhalter-Haftpflichtversicherung, Hausrat-Zusatzversicherung, besondere Sachversicherung und Reisekrakenversicherung!"</p>
+          </div>
+          
+          <div class="character customer">
+            <span class="name">Der Kunde:</span>
+            <p>"Für den Fall, dass ich jetzt plötzlich krank werde und vom Arzt behandelt werden muss, was können Sie mir anbieten?"</p>
+          </div>
+          
+          <div class="character agent">
+            <span class="name">Unser Versicherungsheini:</span>
+            <p>"Da würde ich die besondere Sachversicherung nehmen! Und wenn Ihr Kraken platzt und dabei das Eigentum anderer beschädigt, ist es durchaus sinnvoll, vorher eine Tierhalter-Haftpflichtversicherung abzuschließen..."</p>
+          </div>
+        </div>
+        
+        <div class="story-conclusion">
+          <p>Und so entdeckte der Mann unsere revolutionäre Versicherungskrake – die funktioniert wie eine Kaskoversicherung, nur dass wir Kraken verwenden, um Schäden zu verhindern, statt sie zu bezahlen!</p>
+          <div class="tentacles">🐙 🦑 🐙 🦑 🐙</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .story {
+    padding: 5rem 0;
+    background: linear-gradient(45deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(59,130,246,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(59,130,246,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(59,130,246,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(59,130,246,0.1)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .story-content h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #60a5fa;
+  }
+
+  .story-intro {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .dialogue {
+    margin: 3rem 0;
+  }
+
+  .character {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .character.customer {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    margin-left: 2rem;
+  }
+
+  .character.agent {
+    background: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid #10b981;
+    margin-right: 2rem;
+  }
+
+  .character .name {
+    font-weight: bold;
+    color: #60a5fa;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .character.agent .name {
+    color: #34d399;
+  }
+
+  .character p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+
+  .story-conclusion {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+  }
+
+  .story-conclusion p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .tentacles {
+    font-size: 2rem;
+    animation: wave 2s ease-in-out infinite;
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+
+  @media (max-width: 768px) {
+    .story-content h2 {
+      font-size: 2rem;
+    }
+
+    .character.customer {
+      margin-left: 0;
+    }
+
+    .character.agent {
+      margin-right: 0;
+    }
+
+    .character p {
+      font-size: 1rem;
+    }
+  }
+</style>

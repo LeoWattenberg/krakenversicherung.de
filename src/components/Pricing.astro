@@ -2,46 +2,46 @@
 // Pricing component
 const pricingPlans = [
   {
-    name: "Basic",
-    price: "$29",
-    period: "/month",
-    description: "Perfect for individuals and small families",
+    name: "Tentakel-Basis",
+    price: "29€",
+    period: "/Monat",
+    description: "Für Einsteiger in die Welt der Meerestiere",
     features: [
-      "Basic health coverage",
-      "24/7 customer support",
-      "Online claim filing",
-      "Emergency assistance",
-      "Mobile app access"
+      "Grundschutz Tierhalter-Haftpflicht",
+      "24/7 Kraken-Hotline",
+      "Online-Schadensmeldung",
+      "Notfall-Tentakel-Service",
+      "Mobile Kraken-App"
     ],
     popular: false
   },
   {
-    name: "Premium",
-    price: "$79",
-    period: "/month",
-    description: "Comprehensive coverage for growing families",
+    name: "Oktopus-Premium",
+    price: "79€",
+    period: "/Monat",
+    description: "Vollständige Abdeckung für Kraken-Enthusiasten",
     features: [
-      "Complete health & dental",
-      "Auto insurance included",
-      "Home insurance discount",
-      "Priority customer support",
-      "Travel insurance",
-      "Personal advisor"
+      "Alle Basis-Leistungen",
+      "Reisekrakenversicherung",
+      "Hausrat-Zusatzschutz",
+      "Besondere Sachversicherung",
+      "Persönlicher Versicherungskrake",
+      "Tintenwolken-Schadenregulierung"
     ],
     popular: true
   },
   {
-    name: "Enterprise",
-    price: "$149",
-    period: "/month",
-    description: "Full protection for businesses and large families",
+    name: "Tiefsee-Vollschutz",
+    price: "149€",
+    period: "/Monat",
+    description: "Für professionelle Krakenhalter und Aquarien",
     features: [
-      "All Premium features",
-      "Business liability coverage",
-      "Life insurance included",
-      "Dedicated account manager",
-      "Custom policy options",
-      "Risk assessment consulting"
+      "Alle Premium-Leistungen",
+      "Gewerblicher Kraken-Schutz",
+      "Züchter-Haftpflichtversicherung",
+      "Dedicated Kraken-Manager",
+      "Maßgeschneiderte Tentakel-Lösungen",
+      "Risikobewertung durch Meeresexperten"
     ],
     popular: false
   }
@@ -51,13 +51,13 @@ const pricingPlans = [
 <section id="pricing" class="pricing">
   <div class="container">
     <div class="section-header">
-      <h2>Choose Your Protection Plan</h2>
-      <p>Flexible pricing options to fit your budget and coverage needs</p>
+      <h2>Wählen Sie Ihren Kraken-Schutz</h2>
+      <p>Flexible Tarife für jeden Tentakel-Bedarf – von der kleinen Haushalts-Krake bis zum Aquarium-Betrieb</p>
     </div>
     <div class="pricing-grid">
       {pricingPlans.map((plan) => (
         <div class={`pricing-card ${plan.popular ? 'popular' : ''}`}>
-          {plan.popular && <div class="popular-badge">Most Popular</div>}
+          {plan.popular && <div class="popular-badge">Am beliebtesten</div>}
           <div class="plan-header">
             <h3>{plan.name}</h3>
             <div class="price">
@@ -69,13 +69,13 @@ const pricingPlans = [
           <ul class="features-list">
             {plan.features.map((feature) => (
               <li>
-                <span class="checkmark">✓</span>
+                <span class="checkmark">🐙</span>
                 {feature}
               </li>
             ))}
           </ul>
           <button class={`btn ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>
-            Get Started
+            Jetzt abschließen
           </button>
         </div>
       ))}
